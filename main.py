@@ -1,5 +1,6 @@
 import package_logging
 
+import test
 import sfdc.pool_mgmt as mgmt
 
 def run_main():
@@ -11,7 +12,12 @@ def run_main():
     mgmt.force_pool_inactive(src_pool_name)
 
 
+def run_test():
+    test.test_connection()
 
 if __name__ == '__main__':
     package_logging.initialize_logging()
-    run_main()
+
+    # run_main()
+
+    run_test()
