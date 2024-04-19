@@ -67,7 +67,10 @@ def move_overflow_calls(src_pool_name: str, dest_pool_name: str, calls_to_move: 
     logging.info(f"Completed calls to be moved: {completed_call_count}")
     logging.info(f"Total number of calls for update: {len(for_update)}")
 
-    sfdc.vizier.client.bulk.Click_to_Talk_Request__c.update(for_update)
+    if for_update:
+        sfdc.vizier.client.bulk.Click_to_Talk_Request__c.update(for_update)
+    else:
+        logging.warning('WARNING - No calls were updated!!!!')
 
     logging.info('Done!')
 
