@@ -19,6 +19,6 @@ def test_connection():
     except Exception as ex:
         ex_type, ex_value, ex_traceback = sys.exc_info()
 
-
+#
         logging.error(f'There was a problem connecting to Salesforce.')
         logging.error(ex_value)
