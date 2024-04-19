@@ -18,6 +18,6 @@ def run_test():
 if __name__ == '__main__':
     package_logging.initialize_logging()
 
-    # run_main()
+    run_main()
 
-    run_test()
+    # run_test()

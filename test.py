@@ -1,4 +1,6 @@
 import logging
+import sys
+import traceback
 
 import sfdc
 
@@ -15,5 +17,8 @@ def test_connection():
         logging.info(f'Test successful! Number of Accounts: {account_count}')
 
     except Exception as ex:
+        ex_type, ex_value, ex_traceback = sys.exc_info()
+
+
         logging.error(f'There was a problem connecting to Salesforce.')
-        logging.exception(ex)
+        logging.error(ex_value)
